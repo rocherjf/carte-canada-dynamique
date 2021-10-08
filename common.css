@@ -1,0 +1,33 @@
+#container {
+  display: flex;
+  justify-content: center;
+}
+
+
+#canada g {
+  transition: .3s;
+}
+
+#canada g:hover { 
+  fill: hsl(120, 98%, 60%);
+  cursor: pointer;
+}
+
+
+.province{
+  fill: #d3d3d3;
+}
+
+
+.active, .active:hover { 
+  fill: hsl(120, 98%, 60%);
+}	
+
+
+h1 {
+  font-size: clamp(32px, calc(32px + (28 - 16) * ((100vw - 360px) / 1560)), 56px);
+}
+
+p {
+  font-size: clamp(16px, calc(16px + (28 - 16) * ((100vw - 360px) / 1560)), 28px);
+}
