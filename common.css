@@ -1,3 +1,7 @@
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
 #container {
   display: flex;
   justify-content: center;
@@ -25,9 +29,11 @@
 
 
 h1 {
-  font-size: clamp(32px, calc(32px + (28 - 16) * ((100vw - 360px) / 1560)), 56px);
+  /*font-size: clamp(24px, calc(24px + (28 - 16) * ((100vw - 360px) / 1560)), 36px);*/
+  font-size: 24px;
 }
 
 p {
-  font-size: clamp(16px, calc(16px + (28 - 16) * ((100vw - 360px) / 1560)), 28px);
+  /*font-size: clamp(16px, calc(16px + (28 - 16) * ((100vw - 360px) / 1560)), 24px);*/
+  font-size: 16px;
 }

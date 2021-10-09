@@ -1,6 +1,5 @@
 // Modale
 var modal = document.getElementById("provinceInfo-modal");
-var span = document.getElementById("provinceInfo-modal-close");
 var provinceInfoContenuNom = document.getElementById("provinceInfo-contenu-nom");
 var provinceInfoContenuDevise = document.getElementById("provinceInfo-contenu-devise");
 var provinceInfoContenuDescription = document.getElementById("provinceInfo-contenu-description");
@@ -33,9 +32,6 @@ window.onclick = function (event) {
     }
 }
 
-span.onclick = function () {
-    masquerInfoProvince();
-}
 
 provinces.forEach(province => {
     province.onclick = function () {
