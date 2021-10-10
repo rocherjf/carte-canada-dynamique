@@ -1,10 +1,3 @@
-// Modale
-var modal = document.getElementById("provinceInfo-modal");
-var provinceInfoContenuNom = document.getElementById("provinceInfo-contenu-nom");
-var provinceInfoContenuDevise = document.getElementById("provinceInfo-contenu-devise");
-var provinceInfoContenuDescription = document.getElementById("provinceInfo-contenu-description");
-var provinceInfoContenuDrapeau = document.getElementById("provinceInfo-contenu-drapeau");
-
 // ensemble des provinces et des territoires
 var provinces = document.querySelectorAll(".province");
 
@@ -26,18 +19,9 @@ const imgIleDuPrinceEdouard = { src: "img/Île-du-Prince-Édouard.svg", alt: "dr
 
 
 
-window.onclick = function (event) {
-    if (event.target == modal) {
-        masquerInfoProvince();
-    }
-}
-
-
 provinces.forEach(province => {
     province.onclick = function () {
-
         verouillerProvinceSelectionnee(province);
-
         afficherInfoProvince(province);
     }
 });
@@ -52,23 +36,25 @@ function deselectionnerEnsembleDesProvinces() {
 }
 
 function masquerInfoProvince() {
-    masquerModale();
     deselectionnerEnsembleDesProvinces();
 }
 
 function afficherInfoProvince(province) {
-    let nomProvince = province.querySelector("nom").innerHTML;
-    provinceInfoContenuNom.innerHTML = nomProvince;
-    provinceInfoContenuDevise.innerHTML = "Devise : " + province.querySelector("devise").innerHTML;
-    provinceInfoContenuDescription.innerHTML = province.querySelector("description").innerHTML;
 
+    let nomProvince = province.querySelector("nom").innerHTML;
 
     let image = getImgDrapeauProvince(nomProvince);
 
-    provinceInfoContenuDrapeau.src = image.src;
-    provinceInfoContenuDrapeau.alt = image.alt;
-
-    afficherModale();
+    Swal.fire({
+        title: nomProvince,
+        html: "Devise : " + "<em>" + province.querySelector("devise").innerHTML + "</em>"
+            + "</br></br>"
+            + province.querySelector("description").innerHTML,
+        imageUrl: image.src,
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: image.alt,
+    }).then(() => masquerInfoProvince());
 
 }
 
@@ -119,14 +105,4 @@ function getImgDrapeauProvince(nomProvince) {
     }
     return img;
 
-}
-
-function afficherModale() {
-    modal.classList.remove("modal-cache");
-    modal.classList.add("modal-visible");
-}
-
-function masquerModale() {
-    modal.classList.remove("modal-visible");
-    modal.classList.add("modal-cache");
 }
