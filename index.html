@@ -5,12 +5,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <meta http-equiv="Content-Security-Policy" content="
+  default-src 
+    'self' 
+    https://cdn.jsdelivr.net/npm/sweetalert2@11 
+    https://fonts.gstatic.com;
+  style-src 
+    'self' 
+    https://fonts.googleapis.com/css2  
+    'unsafe-hashes'
+    'sha256-v43W/NzPbaavipHsTh1jdc2zWJ1YSTzJlBajaQBPSlw=' 
+    'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='
+    'sha256-BFI/9FWiRf1IyGeMhmDVIVtEOFwUe/+oJqGygoJCVh0=';">
+  <!-- 
+    sweetalert2 (inline style):
+    'sha256-v43W/NzPbaavipHsTh1jdc2zWJ1YSTzJlBajaQBPSlw=' 
+    'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='
+    'sha256-BFI/9FWiRf1IyGeMhmDVIVtEOFwUe/+oJqGygoJCVh0='
+  -->
+
   <title>Les provinces et territoires du Canada</title>
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
 
   <link rel="stylesheet" href="common.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" >
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
 </head>
 
 <body>
@@ -20,12 +39,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="98vh"
       viewBox="-24500 -27050 55700 47100" id="canada">
       <title>Carte du Canada</title>
-      <style type="text/css">
-        path {
-          stroke-linejoin: round;
-          stroke-linecap: round;
-        }
-      </style>
+
       <defs id="defs1">
         <mask id="all">
           <g>
